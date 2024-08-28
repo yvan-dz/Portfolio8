@@ -1,0 +1,456 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background: #111;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, #00416A, #E4E5E6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 10;
+    max-width: 700px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff, 0 0 40px #00ccff;
+    }
+    to {
+        text-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff, 0 0 40px #00ccff, 0 0 50px #00ccff;
+    }
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-quote {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hero-btn {
+    padding: 15px 30px;
+    background: #00ccff;
+    color: #00416A;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #0088cc;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.5);
+}
+
+/* Snowfall Effect */
+.snowfall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png'); /* Image of the snowflakes */
+    background-repeat: repeat;
+    opacity: 0.7;
+    animation: snowfall 20s linear infinite;
+}
+
+@keyframes snowfall {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%;
+    }
+}
+/* Styles pour les flocons de neige */
+.snowflake {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+/* Navigation */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background 0.3s ease;
+    font-weight: 600;
+}
+
+.navbar ul li a:hover {
+    background: #00ccff;
+    color: #00416A;
+    border-radius: 50px;
+}
+
+/* Sections */
+.section {
+    padding: 100px 20px;
+    background: #111;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #00ccff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 204, 255, 0.7);
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(to right, #00416A, #111);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about h2 {
+    color: #E4E5E6;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.about p {
+    color: #cccccc;
+    max-width: 500px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.about-img {
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+.about-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.about-title {
+    font-size: 1.5em;
+    color: #00ccff;
+    text-shadow: 0 2px 10px rgba(0, 204, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+/* Education Section */
+.education {
+    background: linear-gradient(to bottom, #111, #333);
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-item {
+    margin-bottom: 40px;
+    border-left: 4px solid #00ccff;
+    padding-left: 20px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.education-item h3 {
+    font-size: 1.8em;
+    color: #00ccff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 204, 255, 0.7);
+}
+
+.education-item p {
+    color: #bbbbbb;
+}
+
+/* Experience Section */
+.experience {
+    background: linear-gradient(to bottom, #333, #00416A);
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-item {
+    margin-bottom: 40px;
+    border-left: 4px solid #00ccff;
+    padding-left: 20px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.experience-item h3 {
+    font-size: 1.8em;
+    color: #00ccff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 204, 255, 0.7);
+}
+
+.experience-item p {
+    color: #cccccc;
+}
+
+/* Research Section */
+.research {
+    background: linear-gradient(to bottom, #111, #00416A);
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.research-item {
+    margin-bottom: 40px;
+    border-left: 4px solid #00ccff;
+    padding-left: 20px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.research-item h3 {
+    font-size: 1.8em;
+    color: #00ccff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 204, 255, 0.7);
+}
+
+.research-item p {
+    color: #bbbbbb;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(to bottom, #00416A, #111);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.contact h2 {
+    color: #E4E5E6;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    color: #cccccc;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    background: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background: #00ccff;
+    color: #00416A;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.5);
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+footer p a {
+    color: #00ccff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #0088cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero p, .hero-quote {
+        font-size: 1.1em;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section {
+        padding: 60px 15px;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about p {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .about-img {
+        max-width: 200px;
+    }
+
+    .education, .experience, .research {
+        padding: 60px 15px;
+    }
+
+    .education-item, .experience-item, .research-item {
+        padding-left: 10px;
+        border-left: 3px solid #00ccff;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+        font-size: 1em;
+    }
+}
