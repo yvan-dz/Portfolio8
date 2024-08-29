@@ -22,7 +22,13 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <ul>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-toggle-label">
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+        </label>
+        <ul class="nav-list">
             <li><a href="#about">À propos</a></li>
             <li><a href="#education">Éducation</a></li>
             <li><a href="#experience">Expérience</a></li>
@@ -30,6 +36,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    
+    
 
     <main>
         <!-- About Section -->
@@ -93,6 +101,31 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleCheckbox = document.getElementById('menu-toggle');
+            const navList = document.querySelector('.nav-list');
+    
+            // Toggle the display of the nav list when the checkbox is clicked
+            toggleCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    navList.style.display = 'flex';
+                    
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+    
+            // Hide the menu when a link is clicked
+            navList.addEventListener('click', function () {
+                if (toggleCheckbox.checked) {
+                    toggleCheckbox.checked = false;  // Uncheck the checkbox
+                    navList.style.display = 'none';  // Hide the menu
+                }
+            });
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
