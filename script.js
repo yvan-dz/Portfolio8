@@ -9,9 +9,10 @@
         snowflake.style.opacity = Math.random();
         snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
         snowflake.textContent = '❄';
-        
-        document.body.appendChild(snowflake);
-        
+
+        // Append snowflake to the hero section
+        document.querySelector('.hero').appendChild(snowflake);
+
         setTimeout(() => {
             snowflake.remove();
         }, 5000);
